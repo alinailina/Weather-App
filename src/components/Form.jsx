@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Form = ({ getWeather }) => {
+const Form = (props) => {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
@@ -8,32 +8,28 @@ const Form = ({ getWeather }) => {
     setCity(e.target.value);
   };
 
-  const handleCountry = () => {
-    console.log("hello");
+  const handleCountry = (e) => {
+    setCountry(e.target.value);
   };
 
-  console.log(city);
-
   return (
-    <div>
-      <form onSubmit={getWeather}>
-        <label>City:</label>
-        <input
-          type="text"
-          name="city"
-          value={city}
-          onChange={(e) => handleCity}
-        />
-        <label>Country:</label>
-        <input
-          type="text"
-          name="country"
-          value={country}
-          onChange={() => handleCountry}
-        />
-        <input type="submit" value="Get weather" />
-      </form>
-    </div>
+    <form onSubmit={props.getWeather}>
+      <label>City:</label>
+      <input
+        type="text"
+        name="city"
+        value={city}
+        onChange={(e) => handleCity(e)}
+      />
+      <label>Country:</label>
+      <input
+        type="text"
+        name="country"
+        value={country}
+        onChange={(e) => handleCountry(e)}
+      />
+      <input type="submit" value="Get weather" />
+    </form>
   );
 };
 
