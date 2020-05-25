@@ -3,11 +3,10 @@ import Axios from "axios";
 
 // Children
 import Form from "./Form";
-import Icon from "./Icon";
-import Weather from "./Weather";
+import WeatherOutput from "./WeatherOutput";
 
 const Data = () => {
-  const [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState("");
 
   const getWeather = async (e) => {
     e.preventDefault();
@@ -20,14 +19,12 @@ const Data = () => {
     });
   };
 
-  console.log(weather);
+  //console.log(weather);
 
   return (
     <div>
-      <h1>Data</h1>
       <Form getWeather={getWeather} />
-      <Icon weather={weather} />
-      <Weather weather={weather} />
+      <WeatherOutput {...weather.main} />
     </div>
   );
 };

@@ -9,30 +9,75 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App {
+.container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #f3f3f3;
+  background-color: #f5f5f5;
+  border-radius: 10px;
   width: 50%;
   padding: 25px;
   text-align: center;
 }
 
-nav,
-form {
-  //border: 1px solid red;
+// Navbar
+nav {
+  h1 {
+    font-size: 2rem;
+  }
 }
 
-form {
-  width: 60%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+// DateBuilder
+h2 {
+  font-size: 1.25rem;
+}
 
-  label,
-  input {
-    margin-bottom: 5px;
+// Form
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 0;
+
+  label {
+    font-size: 1.25rem;
+    input[type="text"] {
+      border: none;
+      background-color: inherit;
+      border-bottom: 1px solid #131313;
+      margin: 0 10px;
+      outline: none;
+      padding: 5px;
+      font-size: 1.25rem;
+    }
+  }
+
+  input[type="submit"] {
+    width: 40%;
+    border: none;
+    border: 1px solid #131313;
+    border-radius: 5px;
+    margin: 0 10px;
+    outline: none;
+    padding: 5px;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+}
+
+// Weather
+.output {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  p {
+    display: block;
+    width: 40%;
+
+    span {
+      display: block;
+      font-size: 2rem;
+    }
   }
 }

@@ -2,6 +2,8 @@ import React from "react";
 
 const DateBuilder = () => {
   const formatDate = (d) => {
+    console.log(d.getDay());
+
     let months = [
       "January",
       "February",
@@ -35,7 +37,7 @@ const DateBuilder = () => {
     return `${day} ${month} ${date}, ${year}`;
   };
 
-  return <div>{formatDate(new Date())}</div>;
+  return <h2>Today: {formatDate(new Date())}</h2>;
 };
 
 export default DateBuilder;

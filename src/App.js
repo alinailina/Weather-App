@@ -1,12 +1,14 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Data from "./components/Data";
+import DateBuilder from "./components/DateBuilder";
+import WeatherData from "./components/WeatherData";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="container">
       <Navbar />
-      <Data />
+      <DateBuilder />
+      <WeatherData />
     </div>
   );
 };
